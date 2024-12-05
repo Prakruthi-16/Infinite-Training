@@ -36,57 +36,64 @@ BEGIN
         SET @multiplier = @multiplier + 1;
     END
 END;
-
-
 EXEC GenerateMultiplicationTable @number = 2;
 
+---3.
+
+-- Create the students table
+
+CREATE TABLE students (
+ Sid INT PRIMARY KEY,
+ Sname VARCHAR(50)
+);
 
 
+-- Insert data into the students table
 
----3.Create a trigger to restrict data manipulation on EMP table during General holidays. Display the error message like “Due to Independence day you cannot manipulate data” or "Due To Diwali", you cannot manipulate" etc
-
-CREATE TABLE Holiday (
-    holiday_date DATE PRIMARY KEY,
-    holiday_name VARCHAR(100)
-)
-
-
-INSERT INTO Holiday (holiday_date, holiday_name)
-VALUES 
-    ('2024-08-15', 'Independence Day'),
-    ('2024-01-26', 'Republic Holiday'),
-    ('2024-12-25', 'Christmas'),
-    ('2025-01-01', 'New Year')
+INSERT INTO students (Sid, Sname) VALUES
+(1, 'Jack'),
+(2, 'Rithvik'),
+(3, 'Jaspreeth'),
+(4, 'Praveen'),
+(5, 'Bisa'),
+(6, 'Suraj');
 
 
-CREATE OR ALTER TRIGGER RestrictDataManipulationOnHolidays
-ON Emp
-INSTEAD OF INSERT, UPDATE, DELETE
-AS
-BEGIN
-    DECLARE @IsHoliday BIT;
-    DECLARE @HolidayName VARCHAR(100);
+-- Create the marks table
 
-    -- Check if today is a holiday
-    SELECT TOP 1 @HolidayName = holiday_name
-    FROM Holiday
-    WHERE holiday_date = CONVERT(DATE, GETDATE());
+CREATE TABLE marks (
+ Mid INT PRIMARY KEY,
+ Sid INT,
+ Score INT,
+FOREIGN KEY (Sid) REFERENCES students(Sid)
+);
 
-    IF @HolidayName IS NOT NULL
-    BEGIN
-        -- Raise an error if today is a holiday
-        RAISERROR('Due to %s, you cannot manipulate data.', 16, 1, @HolidayName);
-    END
-    ELSE
-    BEGIN
-        -- If it's not a holiday, allow the operation
-        PRINT 'Data manipulation is allowed on non-holiday dates.';
-        
-       --INSERT INTO Emp (empno, ename, sal) VALUES (1558, 'Samiya', 3000);
 
-        UPDATE Emp SET ename = 'SMITH' WHERE ename = 'SMILL';
+-- Insert data into the marks table
 
-         --DELETE FROM Emp WHERE empno = 1552;
-    END
-END;
-SELECT * FROM Emp;
+INSERT INTO marks (Mid, Sid, Score) VALUES
+
+(1, 1, 23),
+(2, 6, 95),
+(3, 4, 98),
+(4, 2, 17),
+(5, 3, 53),
+(6, 5, 13);
+
+
+-- Query to calculate the status of each student
+
+SELECT 
+    s.Sid,
+    s.Sname,
+    COALESCE(m.Score, 0) AS Score,
+    CASE 
+        WHEN COALESCE(m.Score, 0) >= 50 THEN 'Pass'
+        ELSE 'Fail'
+    END AS Status
+FROM
+students s
+LEFT JOIN 
+marks m ON s.Sid = m.Sid
+ORDER BY 
+s.Sid;
