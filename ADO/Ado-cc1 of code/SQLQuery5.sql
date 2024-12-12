@@ -22,7 +22,7 @@ BEGIN
 
     VALUES (@ProductName, @Price);    
     SET @GeneratedProductId = SCOPE_IDENTITY();
-    SET @DiscountedPrice = @Price * 0.9;  -- 10% discount
+    SET @DiscountedPrice = @Price * 0.9;  
 END;
 
 
