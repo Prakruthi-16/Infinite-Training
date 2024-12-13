@@ -1,5 +1,4 @@
 
-
 use AssignmentDB
 
 CREATE OR ALTER PROCEDURE GeneratePayslip
@@ -54,8 +53,6 @@ SELECT * FROM tblEMP
 
 
 
-
- 
 ---2.Create a trigger to restrict data manipulation on EMP table during General holidays. Display the error message like “Due to Independence day you cannot manipulate data” or "Due To Diwali", you cannot manipulate" etc
 
 CREATE TABLE Holiday (

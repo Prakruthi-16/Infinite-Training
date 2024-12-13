@@ -15,7 +15,7 @@ CREATE PROCEDURE InsertProduct
     @ProductName VARCHAR(255)
     @Price DECIMAL(10, 2),
     @GeneratedProductId INT OUTPUT,
-    @DiscountedPrice DECIMAL(10, 2) OUTPUT
+    @DiscountedPrice float OUTPUT
 AS
 BEGIN  
    INSERT INTO ProductsDetails (ProductName, Price)
