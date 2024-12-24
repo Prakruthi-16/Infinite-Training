@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("RailwayReservation")]
+[assembly: AssemblyTitle("RailwayReservationSystem11")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("RailwayReservation")]
+[assembly: AssemblyProduct("RailwayReservationSystem11")]
 [assembly: AssemblyCopyright("Copyright ©  2024")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("375e5a25-240c-4f87-9aa8-fbc1ade62361")]
+[assembly: Guid("abd853f6-23c8-4bc0-9f45-2b46701b8bb2")]
 
 // Version information for an assembly consists of the following four values:
 //

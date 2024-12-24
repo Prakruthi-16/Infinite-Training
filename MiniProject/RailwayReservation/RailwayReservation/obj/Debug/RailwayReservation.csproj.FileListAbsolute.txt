@@ -1,7 +1,0 @@
-C:\Users\prakruthiu\source\repos\RailwayReservation\RailwayReservation\bin\Debug\RailwayReservation.exe.config
-C:\Users\prakruthiu\source\repos\RailwayReservation\RailwayReservation\bin\Debug\RailwayReservation.exe
-C:\Users\prakruthiu\source\repos\RailwayReservation\RailwayReservation\bin\Debug\RailwayReservation.pdb
-C:\Users\prakruthiu\source\repos\RailwayReservation\RailwayReservation\obj\Debug\RailwayReservation.csproj.AssemblyReference.cache
-C:\Users\prakruthiu\source\repos\RailwayReservation\RailwayReservation\obj\Debug\RailwayReservation.csproj.CoreCompileInputs.cache
-C:\Users\prakruthiu\source\repos\RailwayReservation\RailwayReservation\obj\Debug\RailwayReservation.exe
-C:\Users\prakruthiu\source\repos\RailwayReservation\RailwayReservation\obj\Debug\RailwayReservation.pdb
